@@ -15,11 +15,11 @@ public class UserController {
     private UserServiceImp userService;
     @GetMapping(value = "/user/{id}")
     public User findUserById(@PathVariable Long id){
-        return UserServiceImp.getUser(id);
+        return userService.getUser(id);
 
     }
     @PostMapping(value = "user")
     public Boolean saveUser(@RequestBody User user){
-        return UserServiceImp.createUser(user);
+        return userService.createUser(user);
     }
 }
